@@ -1,0 +1,160 @@
+
+We need to break the project into parts.
+We need to look for stumbling blocks.
+
+As we are looking at laptops, tablets, and smartphones,  we need to stay aware of the physical size of the screen and maybe screen resolution. 
+
+Screen Size: I think everything on the html page has to be sized by percentage.
+Aspect Ratio: In general, Smartphones have the highest aspect ratio (width/height), then tablets, then laptops and monitors for desktops.
+
+I suggest a simplifying assumption: Let us set up the initial version(s) to fit and fill a laptop or monitor screen.
+There will be empty strips on the left and right sides of tablets and phones.
+
+
+----------------
+| REQUIREMENTS |
+----------------
+Campus Facility Information
+  Initially the information will be hard coded into the html & javascript
+  At some later date a Facility Database will be developed with this information.
+    (separation of data from application)
+
+The Map
+  If the dormatories are displayed the map is nearly square.
+  On a Landscape screen, a square map leaves space to the left and or right for buttons, icons, etc. 
+  On a Portrait screen, a square map leaves space on the bottom for buttons, icons, etc. 
+
+  1 Optimal display might call for dynamically sizing the map to fill the width of a Portrait screen or the height of a Landscape screen.
+  2 There might be an option to display just the academic buildings, clipping and resizing making those buildings larger.
+  3 Google does not rotate their maps. Roating the academic part of campus 30 degrees would allow us to make the map even larger. 
+    There might be a library to do that for us.
+  
+Departments
+  The informative popup will display the room number for the department office, phone number, and head of the department. (Hours?)
+  Initially the building where the department is headquatered will be highlighed.
+  An inprovement would be to place a key light on the exact location of the department office.
+  (This would tie in nicely with another feature to key light where a particular classroom was.)
+
+Artwork
+  Icons, invarious sates, will be needed to communicate state to the user.
+  Necessary permissionsmay be reqired.
+  Creating icons is also acceptable.
+
+Facility Information
+  number of floors
+  Basement
+  Clasroom numbering scheme
+
+Facility Bathrooms (Future)
+
+---------
+| TASKS |
+---------
+Task A - Facilities
+  Create a list all the facilities on campus, buildings, sports fields, etc.
+  Determine categories of those faciities
+  Sort facilities (some facilities may be on more than one list)
+
+Task B (no dependences)
+  look into the GoogleMaps api and see the parameters to populate the html canvas with a map of SCSU
+    We'll either need Lattitude and Longitude or we can fudge it.
+
+Task C (after Task B) 
+  The map from Google needs to be cleaned up, extraneous names and dots.
+  SCSU's name obscures buildings.
+  This is part of the Google Map API
+  Move the university's name to a grassy place
+
+Task D (no dependences)
+  Gather the necessary informatoin for the various departments.
+  (The myriad servicesn campus will be included in a subsequent release.)
+  
+------------
+| VERSIONS |
+------------
+version 1: A Simple Framework: title, no map, a few buttons that do nothing
+           "Classroom Buildings", "Parking", "Administration"
+           Just to see what it looks like
+ 
+           get the official RGB codes for SCSU's colors
+           get the official SCSU's logo
+           (keep track of what we "steal", add tasks to get official permission for those parts)
+           has an empty Canvas element
+           
+           Display "Inactive Compass" Icon
+           Display "No Parking Information" Icon
+           
+
+[the version 2 additions can be done in parallel]
+
+version 2.1: Add Buttons
+(requires Task A)
+    get the buttons to show a drop down list when clicked
+    selecting an item on a list generates a popup (initially just repeat the item clicked)
+
+version 2.2: Add Map
+(requires Task B)
+  Display the map
+
+version 2.3: Add icons
+  Compass Icon (initlly not available)
+  Parking Icon (initlly not available)
+
+version 2.4: Compass
+  Detect Internal Magnetometer
+  T: 1 Turn it on
+     2 Detect North
+     3 Turn it off
+     4 Display appropiate compass rose
+     5 Display "Active Compass" Icon
+     6 ? Use Accelerometer to deect movement and update compass ?
+  F: 1 Detect GPS Functionality
+     2 T: 1 Turn it on
+          2 Determine Current Position
+          3 Turn it off
+          4 Get user to move 20 feet
+          5 Get new position
+          6 Calculate movement vectgor 
+          7 Display appropiate compass rose
+          8 Display "Active Compass" Icon
+          9 Kludge a way to update heading from time to time
+     2 F: Do Nothing
+
+version 2.5: Parking Reminder
+  If user
+    Clicks Park Button
+    if in parking Faciity
+      1 get GPS position
+      2 store GPS position
+           Parking Facilty
+           Query User for More info (Floor, floor location)
+      3 Display "Parking Info Saved" Icon
+      4 Display "Parked Car" Icon on map           
+      5 Button becomes "Clear Parking"
+
+
+
+Version 3.1 Demnstrate Facility Highlighting
+  Individually Highlight the various Facilities
+  1 highlight any facility
+  2 hack up something that highlights every facility, one at a time
+    (highlighting one facility un-highlighting the previous facility)
+    (save this as a unit test and part of hte system test)
+
+Version 3.2 Buttons Operational
+    selecting an item on a list
+    1 un-highlighting the previous facility
+    2 highlights the facility
+    3 generates a popup about the facility
+
+
+
+
+  
+
+
+
+
+Task List, Project Plan, Schedule People, Assign (or  Take) Tasks
+
+We probably need to look at Github for code and file sharing.
