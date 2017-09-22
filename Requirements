@@ -1,0 +1,57 @@
+Project Requirements - Sorted
+
+User Requirements
+	The application shall display a map of SCSU and assist the user to locate buildings on campus. The prime use would be to
+	determine the location of classroom buildings. An associated group would be other high-use buildings for students: the library,
+	the student center, and the Wintergreen building. All SCSU faciities should locatable, including Southern on the Green (SOTG).
+
+	The product has no support for users with limited vision.
+	The product should support alternate color schemes for users with color vision deficiency; monochromacy, dichromacy,
+		trichromacy, or deuteranopia, tritanopia, etc.
+
+	It would be useful if the map could zoom and center (scaled and translated).
+
+System Requirements
+	Computer with display, modern browser, support for Html Canvas, and Javascript enabled.
+
+Domain Requirements
+	Domain of Operations
+
+
+
+--------------------
+Functional Requirements
+	1 Display a campus map, retrieved from Google
+	1a The map's color scheme should have the buildings stand out from the background
+		ref: https://snazzymaps.com/
+	   Alternatively the buildings should be outlines
+	2 Display current Location, position refreshed at some nominal rate to reduce power consumption
+	3 Display location where car was parked (location must be in parking lot)
+	4 Compass Heading
+	5 Javascript must be enabled
+	6 Support for HTML Canvas element
+		ref. http://caniuse.com/#feat=canvas	
+
+
+Non-Functional Requirements
+(specify characeristics of the system, constraints)
+	1 Internet Connection is required
+
+	2,3 If the hardware does not support GPS, or it is turned off, the Magnetometer api has no utility
+		The system will display a "No GPS" icon
+			clicking the icon will display "No GPS in this device" or
+						       "GPS currently turned off on device" 
+	3 If the current location is not in a parking facility
+			the system will display a "Not Parked" icon
+	4 If the hardware does not have a Magnetometer, the Magnetometer api has no utility.
+		Early prototypes will display a "No Compass" icon
+			clicking the icon will display "No Compass in this device"
+		Later prototypes will sample the user's GPS location and calculate the current travel direction and display
+		a heading based on that.
+
+	A System should not be a heavy drain on a batery-operated device
+
+
+
+
+  
