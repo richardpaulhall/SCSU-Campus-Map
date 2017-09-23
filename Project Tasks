@@ -28,6 +28,7 @@ The Map
   2 There might be an option to display just the academic buildings, clipping and resizing making those buildings larger.
   3 Google does not rotate their maps. Roating the academic part of campus 30 degrees would allow us to make the map even larger. 
     There might be a library to do that for us.
+  4 To use the Google Maps API requires use of a key. There are requirements involved in using thekey. For the most part: the key cannot be embedded in the source code normay it be in a file that could be stored on GitHub, not in the source code tree. The solution we use needs to be documented. Our development machines will need the file. In the case this becomes installed on a server, the server will need the file.
   
 Departments
   The informative popup will display the room number for the department office, phone number, and head of the department. (Hours?)
@@ -68,7 +69,14 @@ Task C (after Task B)
 Task D (no dependences)
   Gather the necessary informatoin for the various departments.
   (The myriad servicesn campus will be included in a subsequent release.)
-  
+
+Task E (no dependences)
+  Document the files needed to get this applicatin to run and the directory structure. We will need something like:
+    <root>
+      /css
+      /images
+      /keys
+
 ------------
 | VERSIONS |
 ------------
