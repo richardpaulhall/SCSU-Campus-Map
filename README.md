@@ -1,5 +1,5 @@
 # SCSU-Campus-Map
-Southern Connecticut State University
+`Southern Connecticut State University
 Computer Science Department
 Graduate Course CSC 535: Software Engineering
 
@@ -16,5 +16,5 @@ Coelho, David	            Hall, Richard	        Horton, Ryan	            LaLuna,
 coelhod1@ southernct.edu	hallr13@southernct.edu	hortonr3@southernct.edu 	lalunas2@southernct.edu
 
 Python	                    JavaScript, Html-CSS
-                            +	Python	Python, JavaScript, Html-CSS
+                            +	Python	Python, JavaScript, Html-CSS`
  	 	 	 
